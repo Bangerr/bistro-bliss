@@ -1,0 +1,159 @@
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/*********** NAVBAR ********/
+nav {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+
+.navbar-header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.nav-title-icon {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.nav-icon {
+  width: 3.5rem;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-left: auto;
+  font-family: "Montserrat Alternates";
+  font-size: 1.24rem;
+  line-height: 1.75rem;
+  font-weight: 300;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+.nav-link li {
+  list-style: none;
+  font-family: "Open Sans";
+}
+
+/***************************/
+
+.home-page-main {
+  height: 100vh;
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home-page-restaurant-name {
+  font-family: "Sacramento";
+  color: #f1d382;
+  font-size: 40pt;
+  letter-spacing: 26%;
+}
+
+.home-page-slogan {
+  font-family: "Montserrat";
+  font-weight: lighter;
+  font-size: 16pt;
+  color: #ffffff;
+  width: 40%;
+  text-align: center;
+  letter-spacing: 12%;
+}
+
+/************** BOOK A TABLE **************/
+.home-page-bookATable {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2rem;
+  letter-spacing: 10px;
+  margin-top: 5%;
+}
+
+.home-page-book-btn-line {
+  height: 1px;
+  width: 8rem;
+  background-color: #da9292;
+}
+
+.home-page-book-btn {
+  color: #da9292;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.home-page-book-btn:hover {
+  color: #ffffff;
+}
+/***************************/
+
+/*********** ABOUT PAGE ****************/
+.aboutSection {
+  padding-top: 150px;
+  padding-bottom: 80px;
+}
+
+.about-page-heading {
+  font-family: "Open Sans";
+  font-weight: bold;
+  letter-spacing: 12%;
+  font-size: 1.5rem;
+  color: #937f61;
+}
+
+.about-page-first-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-page-text {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: normal;
+  letter-spacing: 12%;
+  color: #ffffff;
+}
+
+.about-page-first-section {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+  justify-items: center;
+}
+
+.about-page-image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/***************************/
+
+/* Screen 720px wide or smaller */
+@media only screen and (min-width: 720px) {
+  /* Removed background-image from body to allow per-page backgrounds */
+}
