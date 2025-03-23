@@ -51,6 +51,30 @@ nav {
   font-family: "Open Sans";
 }
 
+.nav-link-item {
+  position: relative;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  text-decoration: none;
+}
+
+/************** Line through effectccvx **************/
+.nav-link-item::after {
+  content: ""; /* Inserts an empty pseudo-element */
+  position: absolute;
+  width: 0; /* Width is 0, so it's invisible */
+  height: 2px;
+  background-color: #f1d382;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: width 1s ease;
+  z-index: 1;
+}
+
+.nav-link-item:hover::after {
+  width: 100%;
+}
+
 /***************************/
 
 .home-page-main {

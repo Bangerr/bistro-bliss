@@ -11,14 +11,17 @@
             alt="Bistro Bliss" />
         </a>
         <li>
-          <a href="/" class="text-white hover:text-[#f1d382]">Home</a>
+          <a href="/" class="nav-link-item">Home</a>
         </li>
       </div>
       <li>
-        <a href="/about" class="text-white hover:text-[#f1d382]">About</a>
+        <a href="/menu" class="nav-link-item">Menu</a>
       </li>
       <li>
-        <a href="/contact" class="text-white hover:text-[#f1d382]">Contact</a>
+        <a href="/about" class="nav-link-item">About</a>
+      </li>
+      <li>
+        <a href="/contact" class="nav-link-item">Contact</a>
       </li>
     </nav>
   </header>
@@ -32,7 +35,7 @@
 
 .nav-items {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   align-items: center;
 }
 </style>
