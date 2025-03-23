@@ -109,12 +109,22 @@ nav {
 /***************************/
 
 /*********** ABOUT PAGE ****************/
-.aboutSection {
-  padding-top: 150px;
-  padding-bottom: 80px;
+.about-section {
+  padding-top: 30px;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.about-page-heading {
+.story-section {
+  position: relative;
+}
+
+.section-heading {
+  position: absolute;
+  top: 0;
   font-family: "Open Sans";
   font-weight: bold;
   letter-spacing: 12%;
@@ -122,33 +132,65 @@ nav {
   color: #937f61;
 }
 
-.about-page-first-text {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.about-page-text {
-  font-family: "Poppins";
-  font-style: italic;
-  font-weight: normal;
-  letter-spacing: 12%;
-  color: #ffffff;
-}
-
-.about-page-first-section {
+.content-row {
+  position: relative;
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  justify-content: space-between;
   align-items: center;
-  justify-items: center;
 }
 
-.about-page-image {
-  position: absolute;
-  top: 0;
-  width: 100%;
+.content-text {
+  font-family: "Poppins";
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #ffffffa4;
+  letter-spacing: 25%;
+  width: 40%;
+}
+
+/* First paragraph */
+.story-section .content-text {
+  text-align: left;
+  animation: slide-in 3s ease-in-out;
+}
+
+/* Second paragraph */
+.atmosphere-section .content-text {
+  text-align: right;
+  animation: slide-in 3s ease-in-out;
+}
+
+.image-container {
+  height: 375px;
+  width: 400px;
   overflow: hidden;
+  position: relative;
+}
+
+.atmosphere-section .image-container {
+  margin-top: -50px;
+}
+
+.content-image {
+  margin: -100px 0px;
+  top: -5%;
+  position: absolute;
+  animation: slide-in 3s ease-in-out;
+}
+
+/***************************/
+
+/*********** Animate functions ****************/
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /***************************/

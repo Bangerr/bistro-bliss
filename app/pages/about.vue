@@ -6,34 +6,57 @@ import secondDishPicture from "~/assets/images/aboutPage-second.jpg";
 </script>
 
 <template>
-  <NuxtLayout :overlay="'rgba(9, 13, 14, 0.95)'" :bg-image="aboutBackground">
-    <main>
-      <section class="container aboutSection">
-        <div class="about-page-first-text">
-          <h1 class="about-page-heading">Our Story</h1>
-          <div class="about-page-first-section">
-            <p class="about-page-text">
+  <NuxtLayout :overlay="'rgba(9, 13, 14, 0.90)'" :bg-image="aboutBackground">
+    <main class="main-container">
+      <section class="container about-section">
+        <!-- First content section: Story heading + first paragraph + first image -->
+        <div class="content-section story-section">
+          <div class="content-row">
+            <h1 class="section-heading">Our Story</h1>
+            <p class="content-text">
               Founded in 1998, Bistro Bliss began as a dream to bring the warmth
               and vibrancy of Italian dining to our community. Our journey
               started with a simple idea: to create a place where friends and
               family could gather to enjoy hearty meals made with love and the
               finest ingredients.
             </p>
-            <div class="w-[700px] relative">
+            <div class="image-container">
               <img
-                class="about-page-image"
+                class="content-image"
                 src="~/assets/images/aboutPage-first.jpg"
-                alt="dishPicture" />
+                alt="Bistro Bliss first dish" />
             </div>
           </div>
         </div>
-        <p class="about-page-text">
-          Our bistro offers a cozy and inviting atmosphere, reminiscent of the
-          charming eateries found in Italy's picturesque towns. With rustic
-          décor, soft lighting, and an open kitchen, guests can feel the warmth
-          and hospitality that are the hallmarks of Italian culture.
-        </p>
+
+        <!-- Second content section: second paragraph + second image -->
+        <div class="content-section atmosphere-section">
+          <div class="content-row">
+            <div class="image-container">
+              <img
+                class="content-image"
+                src="~/assets/images/aboutPage-second.jpg"
+                alt="Bistro Bliss atmosphere" />
+            </div>
+            <p class="content-text">
+              Our bistro offers a cozy and inviting atmosphere, reminiscent of
+              the charming eateries found in Italy's picturesque towns. With
+              rustic décor, soft lighting, and an open kitchen, guests can feel
+              the warmth and hospitality that are the hallmarks of Italian
+              culture.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
   </NuxtLayout>
 </template>
+
+<style scoped>
+.main-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px; /* Add space for navbar */
+}
+</style>
