@@ -91,6 +91,7 @@ nav {
   color: #f1d382;
   font-size: 40pt;
   letter-spacing: 26%;
+  animation: slide-in-left 2s ease-in-out;
 }
 
 .home-page-slogan {
@@ -101,6 +102,7 @@ nav {
   width: 40%;
   text-align: center;
   letter-spacing: 12%;
+  animation: slide-in-right 2s ease-in-out;
 }
 
 /************** BOOK A TABLE **************/
@@ -111,6 +113,7 @@ nav {
   gap: 1.2rem;
   letter-spacing: 10px;
   margin-top: 5%;
+  animation: slide-in-left 2s ease-in-out;
 }
 
 .home-page-book-btn-line {
