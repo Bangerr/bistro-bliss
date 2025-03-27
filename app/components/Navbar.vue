@@ -23,6 +23,18 @@
       <li>
         <a href="/contact" class="nav-link-item">Contact</a>
       </li>
+      <label class="hamburger-menu">
+        <input type="checkbox" />
+      </label>
+      <!-- Sidebar for mobile navigation -->
+      <aside class="sidebar">
+        <nav class="mobile-navbar">
+          <a href="/" class="nav-link-item">Home</a>
+          <a href="/menu" class="nav-link-item">Menu</a>
+          <a href="/about" class="nav-link-item">About</a>
+          <a href="/contact" class="nav-link-item">Contact</a>
+        </nav>
+      </aside>
     </nav>
   </header>
 </template>
@@ -31,11 +43,5 @@
 <style scoped>
 .transparent {
   background-color: transparent;
-}
-
-.nav-items {
-  display: flex;
-  gap: 1.2rem;
-  align-items: center;
 }
 </style>

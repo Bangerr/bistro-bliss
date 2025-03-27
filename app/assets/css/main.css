@@ -1,3 +1,15 @@
+:root {
+  --bar-width: 40px;
+  --bar-height: 4px;
+  --hamburger-gap: 6px;
+  --foreground: #f1d382;
+  --background: #1f1f1f;
+  --hamburger-margin: 5px;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc((var(--bar-height) * 3 + var(--hamburger-gap) * 2));
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+}
+
 html,
 body {
   height: 100vh;
@@ -31,7 +43,14 @@ nav {
   width: 3.5rem;
 }
 
+.nav-items {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
 .nav-link {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -57,7 +76,7 @@ nav {
   text-decoration: none;
 }
 
-/************** Line through effectccvx **************/
+/************** Line through effectc **************/
 .nav-link-item::after {
   content: ""; /* Inserts an empty pseudo-element */
   position: absolute;
@@ -75,6 +94,105 @@ nav {
   width: 100%;
 }
 
+/************** Hamburger Menu ****************/
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  top: 25%;
+  right: 10px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hamburger-menu:has(input:checked) {
+  --foreground: white;
+  --background: #333;
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  border-radius: 9999px;
+  transform-origin: left center;
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing);
+}
+
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+/* Pseudo-element before the hamburger-menu */
+/* Does the hamburger have an input checked inside of it, if so then procced */
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+/* Pseudo-element after the hamburger-menu */
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--background);
+  width: 100%;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+/* Show sidebar when hamburger is checked */
+.hamburger-menu:has(input:checked) + .sidebar {
+  transform: translateX(0);
+}
+
+.mobile-navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  height: 100%;
+}
+
+/* Mobile navigation links */
+.mobile-navbar a {
+  color: var(--foreground);
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.mobile-navbar a:hover {
+  color: #ffffff;
+}
+
 /***************************/
 
 .home-page-main {
@@ -85,20 +203,23 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
-.home-page-restaurant-name {
+
+.restaurant-name-container h1 {
   font-family: "Sacramento";
   color: #f1d382;
-  font-size: 40pt;
-  letter-spacing: 26%;
+  font-size: 50pt;
+  letter-spacing: 10%;
+  white-space: nowrap;
   animation: slide-in-left 2s ease-in-out;
 }
 
 .home-page-slogan {
-  font-family: "Montserrat";
-  font-weight: lighter;
-  font-size: 16pt;
-  color: #ffffff;
+  font-family: "Montserrat Alternates";
+  font-weight: 100;
+  font-size: 1.15rem;
+  color: #c5c5c5;
   width: 40%;
   text-align: center;
   letter-spacing: 12%;
@@ -112,6 +233,7 @@ nav {
   align-items: center;
   gap: 1.2rem;
   letter-spacing: 10px;
+  text-align: center;
   margin-top: 5%;
   animation: slide-in-left 2s ease-in-out;
 }
@@ -126,7 +248,7 @@ nav {
   color: #da9292;
   font-size: 1.2rem;
   font-weight: 700;
-  text-decoration: none;
+  text-align: center;
   transition: color 0.3s ease;
 }
 
@@ -214,6 +336,25 @@ nav {
 /***************************/
 
 /*********** Animate functions ****************/
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
 @keyframes slide-in-left {
   0% {
     transform: translateX(-100%);
@@ -247,12 +388,68 @@ nav {
 
 /***************************/
 
-/* Screen 720px wide or smaller */
-@media only screen and (max-width: 1200px) {
-  .image-container {
-    height: 300px;
-    width: 400px;
-    overflow: hidden;
-    position: relative;
+/* Screen size: 600px and smaller */
+@media only screen and (max-width: 600px) {
+  .home-page-main {
+    width: 90%;
   }
+}
+
+/* Screen size: 768px and smaller */
+@media only screen and (max-width: 768px) {
+  /************* HOME PAGE **************/
+  .restaurant-name-container h1 {
+    font-family: "Sacramento";
+    color: #f1d382;
+    font-size: 35pt;
+    letter-spacing: 10%;
+    white-space: nowrap;
+    animation: slide-in-left 2s ease-in-out;
+  }
+
+  .home-page-slogan {
+    font-size: 12pt;
+    letter-spacing: 5%;
+    font-weight: 100;
+    width: 100% !important;
+  }
+
+  /************** BOOK A TABLE **************/
+
+  .home-page-bookATable {
+    letter-spacing: 10%;
+    gap: 5%;
+  }
+
+  .home-page-book-btn-line {
+    height: 1px;
+    width: 5rem;
+    background-color: #da9292;
+  }
+
+  .nav-link li:not(:first-child) {
+    display: none;
+  }
+
+  /***************************/
+}
+
+/* Screen size: 768px and wider */
+@media only screen and (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+/* Screen size: 992px and smaller */
+@media only screen and (max-width: 992px) {
+  .home-page-slogan {
+    font-size: 12pt;
+    letter-spacing: 5%;
+    font-weight: 100;
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
 }
