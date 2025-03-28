@@ -32,16 +32,18 @@ const props = defineProps({
 .layout-container {
   min-height: 100vh;
   width: 100%;
-  position: absolute;
-  top: -60%;
-  left: 0;
-  right: 0;
-  bottom: 75%;
+  background-color: #0b1315;
 }
 
 .has-bg {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  position: absolute;
+  top: -60%;
+  left: 0;
+  right: 0;
+  bottom: 75%;
+  z-index: 0;
 }
 </style>
