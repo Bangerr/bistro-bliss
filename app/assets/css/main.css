@@ -29,7 +29,6 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 /*********** NAVBAR ********/
@@ -434,6 +433,7 @@ nav {
 .parallax-section {
   position: relative;
   height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -582,6 +582,21 @@ nav {
     background: rgba(11, 19, 21, 0.75);
     height: 50vh;
     width: 100%;
+    transform: flat;
+    perspective: none;
+    position: relative;
+    display: block;
+  }
+
+  .parallax-section .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: none !important;
+    display: block;
   }
 
   .content-container {
