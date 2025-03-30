@@ -1,12 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from "nuxt/config";
+
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
-
-  css: ["./assets/css/main.css"],
 
   future: {
     compatibilityVersion: 4,
   },
+
+  devtools: { enabled: false },
 
   // experimental: {
   //   scanPageMeta: "after-resolve",
@@ -55,9 +57,30 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/icon",
     "@nuxt/image",
-    "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
+    "@nuxt/ui-pro",
+    "@nuxtjs/i18n",
   ],
+
+  css: ["~/assets/css/main.css"],
+  i18n: {
+    locales: [
+      {
+        code: "de",
+        name: "Deutsch",
+      },
+      {
+        code: "en",
+        name: "English",
+      },
+      {
+        code: "fr",
+        name: "Français",
+      },
+    ],
+  },
+
+  hooks: {},
 
   googleFonts: {
     families: {
