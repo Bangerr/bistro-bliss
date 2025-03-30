@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref, onMounted, onUnmounted } from "vue";
 
 type Dish = {
   title: string;
@@ -12,10 +12,29 @@ const props = defineProps<{
   dishes: Dish[];
 }>();
 
-// Split the dishes into 8 dishes per slide
+// Reactive state for mobile detection
+const isMobile = ref(false);
+
+const checkMobile = () => {
+  // Use 768px breakpoint as defined in CSS
+  isMobile.value = window.innerWidth <= 768;
+};
+
+// Lifecycle hooks for resize listener
+onMounted(() => {
+  checkMobile(); // Initial check
+  window.addEventListener("resize", checkMobile);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", checkMobile);
+});
+
+// Split the dishes based on screen size
 const dishSlides = computed(() => {
   const slides = [];
-  const dishesPerSlide = 8;
+  // Show 4 dishes per slide on mobile, 8 otherwise
+  const dishesPerSlide = isMobile.value ? 4 : 8;
   for (let i = 0; i < props.dishes.length; i += dishesPerSlide) {
     slides.push(props.dishes.slice(i, i + dishesPerSlide));
   }
@@ -64,7 +83,7 @@ const dishSlides = computed(() => {
             </div>
           </div>
         </div>
-        <div class="column">
+        <div v-if="!isMobile" class="column">
           <div
             v-for="(dish, index) in slideDishes.slice(4, 8)"
             :key="`col2-${index}`"
@@ -113,7 +132,7 @@ const dishSlides = computed(() => {
   flex-direction: row;
   justify-content: space-around;
   gap: 75px;
-  min-height: 480px;
+  min-height: 500px;
 }
 
 .column {
@@ -129,7 +148,7 @@ const dishSlides = computed(() => {
   align-items: start;
   text-align: center;
   gap: 5px;
-  height: 120px;
+  height: 125px;
 }
 
 .dish-details {
@@ -176,20 +195,32 @@ const dishSlides = computed(() => {
     font-size: 16pt;
   }
 
+  .dish {
+    height: 125px;
+  }
+
   .dish-details {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     gap: 5px;
   }
 
   .dish-details h3,
   .dish-details p {
-    text-align: center;
+    text-align: start;
     width: 100%;
+    font-size: 12pt;
+  }
+
+  .dish-details p {
+    width: fit-content;
   }
 
   .dish-description {
     text-align: center;
+    width: 100%;
+    font-size: 11pt;
   }
 }
 </style>
