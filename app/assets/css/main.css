@@ -581,6 +581,12 @@ nav {
   .parallax-section {
     background: rgba(11, 19, 21, 0.75);
     height: 50vh;
+    width: 100%;
+  }
+
+  .content-container {
+    width: 100%;
+    padding: 0 10px;
   }
 
   .last-content-container {

@@ -11,7 +11,7 @@
           <a href="tel:+390123456789">+39 0123 456789</a><br />
           <a href="mailto:info@bistrobliss.com">info@bistrobliss.com</a>
         </p>
-        <h4>OPENING HOURS</h4>
+        <h3>OPENING HOURS</h3>
         <p>
           Mon - Fri: 10:00 - 22:00<br />
           Sat - Sun: 10:00 - 23:00
@@ -68,7 +68,7 @@
 .footer-column {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   min-width: 200px;
 }
 
@@ -76,6 +76,13 @@
   font-family: "Montserrat";
   font-weight: 600;
   font-size: 1.2rem;
+  color: #b29771;
+  letter-spacing: 10%;
+}
+
+.footer-column h3 {
+  font-family: "Montserrat";
+  font-weight: 600;
   color: #b29771;
   letter-spacing: 10%;
 }
@@ -104,7 +111,7 @@ li {
 
 .reservation-link {
   border: 1px solid #b29771;
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 5px;
   text-decoration: none;
   color: #fff;
@@ -140,12 +147,14 @@ li {
   .footer-container {
     flex-direction: column;
     justify-content: center;
+    gap: 25px;
     align-items: center;
   }
 
   .footer-column {
     align-items: center;
     text-align: center;
+    gap: 10px;
     width: 100%;
   }
 
