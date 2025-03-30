@@ -188,7 +188,7 @@ const dishSlides = computed(() => {
   }
 
   .column {
-    width: 90%;
+    width: 100%;
   }
 
   .menu-section-title h2 {
@@ -197,6 +197,7 @@ const dishSlides = computed(() => {
 
   .dish {
     height: 125px;
+    gap: 10px;
   }
 
   .dish-details {
@@ -204,6 +205,8 @@ const dishSlides = computed(() => {
     justify-content: space-between;
     align-items: center;
     gap: 5px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
   }
 
   .dish-details h3,
@@ -218,9 +221,11 @@ const dishSlides = computed(() => {
   }
 
   .dish-description {
-    text-align: center;
-    width: 100%;
+    text-align: start;
+    width: 90%;
     font-size: 11pt;
+    text-align: justify;
+    overflow-wrap: break-word;
   }
 }
 </style>
