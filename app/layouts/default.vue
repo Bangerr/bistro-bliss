@@ -37,6 +37,7 @@ const props = defineProps({
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: #0b1315;
 }
 
 .has-bg {

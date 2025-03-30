@@ -2,7 +2,7 @@
 
 <template>
   <header class="navbar-header">
-    <nav class="container nav-link">
+    <nav class="container nav-link navbar-container">
       <div class="nav-items">
         <a href="/" class="nav-title-icon">
           <img

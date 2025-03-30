@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@nuxt/ui-pro";
+@import "@nuxt/ui";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -124,7 +124,6 @@ nav {
 }
 
 .hamburger-menu:has(input:checked) {
-  --foreground: white;
   --background: #333;
 }
 
@@ -278,6 +277,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 .story-section {
@@ -542,8 +542,34 @@ nav {
     background-color: #da9292;
   }
 
+  .navbar-container {
+    width: 95%;
+    margin-inline: auto;
+  }
+
   .nav-link li:not(:first-child) {
     display: none;
+  }
+
+  /*********** ABOUT PAGE ****************/
+  .story-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-container {
+    height: 300px;
+    width: 300px;
+  }
+
+  .first-image {
+    display: none;
+  }
+
+  .text-section {
+    width: 80%;
+    margin-bottom: 50px;
   }
 
   /*********** MENU PAGE ****************/

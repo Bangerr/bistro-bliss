@@ -58,7 +58,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "@nuxtjs/google-fonts",
-    "@nuxt/ui-pro",
+    "@nuxt/ui",
     "@nuxtjs/i18n",
   ],
 

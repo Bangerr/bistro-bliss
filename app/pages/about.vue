@@ -11,7 +11,7 @@ import secondDishPicture from "~/assets/images/aboutPage-second.jpg";
       <section class="container about-section">
         <h1 class="heading-section">Our Story</h1>
         <div class="story-section">
-          <div class="image-container">
+          <div class="image-container first-image">
             <img
               class="content-image"
               src="~/assets/images/aboutPage-second.jpg"

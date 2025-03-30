@@ -955,30 +955,6 @@
     rc9 "^2.1.2"
     std-env "^3.8.1"
 
-"@nuxt/ui-pro@^3.0.0":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@nuxt/ui-pro/-/ui-pro-3.0.2.tgz#93f6fee70234cfea24394a3c4724f79fffd2aa3f"
-  integrity sha512-3C4YjSlA7K75mHRQuGqa1d1KZ3rXzaBkW31jiOnU2XDLFWA65oVzQgqooiCa5FluDmgbTf+66upKm1u9KLYQDQ==
-  dependencies:
-    "@nuxt/kit" "^3.16.1"
-    "@nuxt/schema" "^3.16.1"
-    "@nuxt/ui" "^3.0.2"
-    "@standard-schema/spec" "^1.0.0"
-    "@vueuse/core" "^13.0.0"
-    consola "^3.4.2"
-    defu "^6.1.4"
-    dotenv "^16.4.7"
-    git-url-parse "^16.0.1"
-    ofetch "^1.4.1"
-    ohash "^2.0.11"
-    pathe "^2.0.3"
-    pkg-types "^2.1.0"
-    scule "^1.3.0"
-    tinyglobby "^0.2.12"
-    unplugin "^2.2.2"
-    unplugin-auto-import "^19.1.2"
-    unplugin-vue-components "^28.4.1"
-
 "@nuxt/ui@^3.0.2":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@nuxt/ui/-/ui-3.0.2.tgz#113dc77b21e1865083600b7c133b79e662d88969"
