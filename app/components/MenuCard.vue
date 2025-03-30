@@ -159,6 +159,8 @@ const dishSlides = computed(() => {
   align-items: baseline;
   width: 100%;
   color: #b29771;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
 }
 
 .dish-details h3 {

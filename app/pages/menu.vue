@@ -88,7 +88,7 @@ const layout = "menu";
 
         <section class="last-content-section">
           <div class="last-content-container">
-            <Footer></Footer>
+            <Footer />
           </div>
         </section>
       </div>
