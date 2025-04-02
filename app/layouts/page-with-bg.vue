@@ -28,6 +28,7 @@ const props = defineProps({
     ">
     <Navbar />
     <slot />
+    <Footer />
   </div>
 </template>
 

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import menuBackground from "../assets/images/menu-background.jpg";
-import { breakfastDishes } from "~/utils/index";
-import { startersDishes } from "~/utils/index";
-import { mainCourseDishes } from "~/utils/index";
-import { desertDishes } from "~/utils/index";
-import { drinks } from "~/utils/index";
+import { breakfastDishes } from "~/utils/test";
+import { startersDishes } from "~/utils/test";
+import { mainCourseDishes } from "~/utils/test";
+import { desertDishes } from "~/utils/test";
+import { drinks } from "~/utils/test";
 
 const layout = "menu";
 </script>

@@ -8,6 +8,12 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
+  runtimeConfig: {
+    public: {
+      googleMapsApiKey: process.env.NUXT_GOOGLE_API_KEY,
+    },
+  },
+
   devtools: { enabled: false },
 
   // experimental: {
@@ -66,6 +72,10 @@ export default defineNuxtConfig({
   i18n: {
     locales: [
       {
+        code: "eng",
+        name: "English",
+      },
+      {
         code: "de",
         name: "Deutsch",
       },
@@ -79,8 +89,6 @@ export default defineNuxtConfig({
       },
     ],
   },
-
-  hooks: {},
 
   googleFonts: {
     families: {

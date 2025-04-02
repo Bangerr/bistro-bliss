@@ -11,18 +11,13 @@ const props = defineProps<{
   sectiontitle: string;
   dishes: Dish[];
 }>();
-
-// Reactive state for mobile detection
 const isMobile = ref(false);
-
 const checkMobile = () => {
-  // Use 768px breakpoint as defined in CSS
   isMobile.value = window.innerWidth <= 768;
 };
 
-// Lifecycle hooks for resize listener
 onMounted(() => {
-  checkMobile(); // Initial check
+  checkMobile();
   window.addEventListener("resize", checkMobile);
 });
 
@@ -30,10 +25,11 @@ onUnmounted(() => {
   window.removeEventListener("resize", checkMobile);
 });
 
-// Split the dishes based on screen size
+/* Split the dishes based on screen size.
+Show 4 dishes per slide on mobile, 8 otherwise  
+*/
 const dishSlides = computed(() => {
   const slides = [];
-  // Show 4 dishes per slide on mobile, 8 otherwise
   const dishesPerSlide = isMobile.value ? 4 : 8;
   for (let i = 0; i < props.dishes.length; i += dishesPerSlide) {
     slides.push(props.dishes.slice(i, i + dishesPerSlide));

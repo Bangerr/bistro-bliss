@@ -1,23 +1,12 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html {
-  scroll-behavior: smooth;
-}
-
-* {
-  box-sizing: border-box;
-}
 
 :root {
   --bar-width: 40px;
   --bar-height: 4px;
-  --hamburger-gap: 6px;
   --foreground: #f1d382;
   --background: #1f1f1f;
+  --hamburger-gap: 6px;
   --hamburger-margin: 5px;
   --animation-timing: 200ms ease-in-out;
   --hamburger-height: calc((var(--bar-height) * 3 + var(--hamburger-gap) * 2));
@@ -26,9 +15,10 @@ html {
 
 html,
 body {
-  height: 100vh;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+  background-color: #0b1315;
 }
 
 /*********** NAVBAR ********/
@@ -135,8 +125,11 @@ nav {
   background-color: var(--foreground);
   border-radius: 9999px;
   transform-origin: left center;
-  transition: opacity var(--animation-timing), width var(--animation-timing),
-    rotate var(--animation-timing), translate var(--animation-timing);
+  transition:
+    opacity var(--animation-timing),
+    width var(--animation-timing),
+    rotate var(--animation-timing),
+    translate var(--animation-timing);
 }
 
 .hamburger-menu input {
@@ -424,12 +417,6 @@ nav {
   padding: 0 2rem;
 }
 
-.last-content-container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 200px;
-}
-
 .parallax-section {
   position: relative;
   height: 100vh;
@@ -602,10 +589,6 @@ nav {
   .content-container {
     width: 100%;
     padding: 0 10px;
-  }
-
-  .last-content-container {
-    padding: 0 25px;
   }
 }
 

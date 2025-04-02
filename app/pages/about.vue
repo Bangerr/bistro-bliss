@@ -14,7 +14,7 @@ import secondDishPicture from "~/assets/images/aboutPage-second.jpg";
           <div class="image-container first-image">
             <img
               class="content-image"
-              src="~/assets/images/aboutPage-second.jpg"
+              :src="secondDishPicture"
               alt="Bistro Bliss atmosphere" />
           </div>
           <div class="text-section">
@@ -36,7 +36,7 @@ import secondDishPicture from "~/assets/images/aboutPage-second.jpg";
           <div class="image-container">
             <img
               class="content-image"
-              src="~/assets/images/aboutPage-first.jpg"
+              :src="firstDishPicture"
               alt="Bistro Bliss first dish" />
           </div>
         </div>

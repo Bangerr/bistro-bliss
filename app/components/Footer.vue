@@ -50,6 +50,10 @@
 
 <style scoped>
 .footer {
+  position: static;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 200px;
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -130,6 +134,7 @@ li {
   color: #aaa;
   position: relative;
   padding-top: 15px;
+  margin-bottom: 15px;
 }
 
 .footer-bottom::after {
@@ -144,6 +149,9 @@ li {
 }
 
 @media only screen and (max-width: 768px) {
+  .footer {
+    padding: 0 25px;
+  }
   .footer-container {
     flex-direction: column;
     justify-content: center;
@@ -156,6 +164,11 @@ li {
     text-align: center;
     gap: 10px;
     width: 100%;
+  }
+
+  .footer-bottom {
+    position: relative;
+    margin-bottom: 15px;
   }
 
   .social-links {
