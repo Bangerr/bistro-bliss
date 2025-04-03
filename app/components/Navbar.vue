@@ -39,7 +39,6 @@
   </header>
 </template>
 
-<!-- Applies only to the current component-->
 <style scoped>
 .transparent {
   background-color: transparent;

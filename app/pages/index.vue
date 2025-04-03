@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// Import the image directly
 import homeBackground from "~/assets/images/desktop-homepage-image.jpg";
 </script>
 

@@ -7,7 +7,6 @@ const layout = "contact";
     <main class="contact-main">
       <h1 class="page-title">Get In Touch</h1>
 
-      <!-- Contact Details Section (Always shown now) -->
       <section class="contact-info-section">
         <h2>Our Details</h2>
         <div class="details-grid">
@@ -49,11 +48,10 @@ const layout = "contact";
 .contact-main {
   background-color: #0b1315;
   width: 80%;
-  margin: 100px auto; /* Added top/bottom margin */
-  padding: 50px; /* Added padding */
-  color: #ccc; /* Default text color */
-  border-radius: 8px; /* Optional: adds rounded corners */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional: adds subtle shadow */
+  margin: 100px auto;
+  padding: 50px;
+  color: #ccc;
+  border-radius: 8px;
 }
 
 .page-title {
@@ -87,7 +85,7 @@ const layout = "contact";
 }
 
 .detail-item {
-  background-color: rgba(255, 255, 255, 0.05); /* Slightly lighter background */
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 25px;
   border-radius: 5px;
 }
@@ -98,7 +96,7 @@ const layout = "contact";
   margin-bottom: 15px;
   display: flex;
   align-items: center;
-  gap: 8px; /* Space between icon and text */
+  gap: 8px;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -118,22 +116,19 @@ const layout = "contact";
   color: #fff;
 }
 
-/* Reservation & Maps Section */
 .reservation-maps-section {
-  padding: 50px 0; /* Adjusted padding */
+  padding: 50px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* margin-top: 100px; Removed margin-top, spacing handled by sections */
   gap: 50px;
   min-height: fit-content;
 }
 
-/* Added column wrappers */
 .reservation-column,
 .map-column {
-  flex: 1; /* Allow columns to grow */
-  min-width: 300px; /* Minimum width before wrapping */
+  flex: 1;
+  min-width: 300px;
 }
 
 .reservation-column h2,
@@ -141,15 +136,11 @@ const layout = "contact";
   font-size: 2rem;
   font-weight: 600;
   color: #fff;
-  margin-bottom: 25px; /* Space below heading */
+  margin-bottom: 25px;
   font-family: "Montserrat", sans-serif;
 }
 
-/* Removed direct h1 styling for this section as it's handled by column h2 */
-/* .reservation-maps-section h1 { ... } */
-
 @media only screen and (max-width: 1200px) {
-  /* Adjusted breakpoint for better responsiveness */
   .contact-main {
     width: 90%;
     padding: 40px;
@@ -157,24 +148,23 @@ const layout = "contact";
 }
 
 @media only screen and (max-width: 992px) {
-  /* Medium screens */
   .reservation-maps-section {
     flex-direction: column;
-    gap: 60px; /* Increased gap when stacked */
+    gap: 60px;
   }
   .reservation-column,
   .map-column {
-    min-width: 100%; /* Full width when stacked */
+    min-width: 100%;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .contact-main {
     width: 100%;
-    margin: 50px auto; /* Reduced margin */
-    padding: 30px 20px; /* Reduced padding */
-    border-radius: 0; /* Remove radius on small screens */
-    box-shadow: none; /* Remove shadow */
+    margin: 50px auto;
+    padding: 30px 20px;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .page-title {
@@ -191,7 +181,7 @@ const layout = "contact";
   }
 
   .details-grid {
-    grid-template-columns: 1fr; /* Stack details vertically */
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
@@ -200,11 +190,8 @@ const layout = "contact";
   }
 
   .reservation-maps-section {
-    /* width: 100%; */ /* Already handled by column */
-    padding: 0 0; /* Adjusted padding */
-    /* flex-direction: column; */ /* Already handled by 992px breakpoint */
-    gap: 40px; /* Adjusted gap */
-    /* margin-bottom: 50px; */ /* Removed, spacing handled by sections */
+    padding: 0 0;
+    gap: 40px;
   }
 
   .reservation-column h2,

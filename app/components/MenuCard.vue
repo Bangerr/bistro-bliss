@@ -1,12 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, onUnmounted } from "vue";
 
-type Dish = {
-  title: string;
-  description: string;
-  price: string | number;
-};
-
 const props = defineProps<{
   sectiontitle: string;
   dishes: Dish[];

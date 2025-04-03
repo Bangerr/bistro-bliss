@@ -25,7 +25,6 @@ async function handleSubmit(event: FormSubmitEvent<ReservationFormSchema>) {
   });
 
   if (res.ok) {
-    const data = await res.json();
     toast.add({
       title: "Success",
       description: "Reservation confirmed.",
@@ -187,7 +186,7 @@ label span {
   position: relative;
   width: 100%;
 }
-/* First name input wrapper after element */
+
 .first-name-wrapper::after {
   content: "First Name";
   position: absolute;
@@ -198,7 +197,6 @@ label span {
   font-weight: 400;
 }
 
-/* Last name input wrapper after element */
 .last-name-wrapper::after {
   content: "Last name";
   position: absolute;
