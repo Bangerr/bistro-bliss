@@ -69,26 +69,6 @@ export default defineNuxtConfig({
   ],
 
   css: ["~/assets/css/main.css"],
-  i18n: {
-    locales: [
-      {
-        code: "eng",
-        name: "English",
-      },
-      {
-        code: "de",
-        name: "Deutsch",
-      },
-      {
-        code: "en",
-        name: "English",
-      },
-      {
-        code: "fr",
-        name: "Français",
-      },
-    ],
-  },
 
   googleFonts: {
     families: {
