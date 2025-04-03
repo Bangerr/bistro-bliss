@@ -2,7 +2,7 @@
 
 <template>
   <header class="navbar-header">
-    <nav class="container nav-link">
+    <nav class="container nav-link navbar-container">
       <div class="nav-items">
         <a href="/" class="nav-title-icon">
           <img
@@ -11,28 +11,36 @@
             alt="Bistro Bliss" />
         </a>
         <li>
-          <a href="/" class="text-white hover:text-[#f1d382]">Home</a>
+          <a href="/" class="nav-link-item">Home</a>
         </li>
       </div>
       <li>
-        <a href="/about" class="text-white hover:text-[#f1d382]">About</a>
+        <a href="/menu" class="nav-link-item">Menu</a>
       </li>
       <li>
-        <a href="/contact" class="text-white hover:text-[#f1d382]">Contact</a>
+        <a href="/about" class="nav-link-item">About</a>
       </li>
+      <li>
+        <a href="/contact" class="nav-link-item">Contact</a>
+      </li>
+      <label class="hamburger-menu">
+        <input type="checkbox" />
+      </label>
+      <!-- Sidebar for mobile navigation -->
+      <aside class="sidebar">
+        <nav class="mobile-navbar">
+          <a href="/" class="nav-link-item">Home</a>
+          <a href="/menu" class="nav-link-item">Menu</a>
+          <a href="/about" class="nav-link-item">About</a>
+          <a href="/contact" class="nav-link-item">Contact</a>
+        </nav>
+      </aside>
     </nav>
   </header>
 </template>
 
-<!-- Applies only to the current component-->
 <style scoped>
 .transparent {
   background-color: transparent;
-}
-
-.nav-items {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
 }
 </style>

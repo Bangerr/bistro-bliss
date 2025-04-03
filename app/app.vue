@@ -1,7 +1,12 @@
+<script setup lang="ts"></script>
+
 <template>
   <div class="font-Montserrat">
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    <UApp>
+      <NuxtLoadingIndicator />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </UApp>
   </div>
 </template>

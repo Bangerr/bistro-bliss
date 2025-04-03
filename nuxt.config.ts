@@ -1,12 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from "nuxt/config";
+
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
-
-  css: ["./assets/css/main.css"],
 
   future: {
     compatibilityVersion: 4,
   },
+
+  runtimeConfig: {
+    public: {
+      googleMapsApiKey: process.env.NUXT_GOOGLE_API_KEY,
+    },
+  },
+
+  devtools: { enabled: false },
 
   // experimental: {
   //   scanPageMeta: "after-resolve",
@@ -55,9 +63,12 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/icon",
     "@nuxt/image",
-    "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
+    "@nuxt/ui",
+    "@nuxtjs/i18n",
   ],
+
+  css: ["~/assets/css/main.css"],
 
   googleFonts: {
     families: {
